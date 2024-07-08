@@ -12,7 +12,7 @@ function App() {
 
     const handleSubmit = async () => {
         try {
-            const response = await axios.post('http://localhost:8000/predict/', { text });
+            const response = await axios.post('https://backend-spam-sms-classifier-2.onrender.com/predict/', { text });
             setResult(response.data.prediction);
         } catch (error) {
             console.error("There was an error!", error);
