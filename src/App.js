@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import axios from 'axios';
 import './App.css';
+import Title from './components/Title';
+import InputBox from './components/InputBox';
+import CheckButton from './components/CheckButton';
+
 
 function App() {
+  const [text, setText] = useState('');
+    const [result, setResult] = useState('');
+
+    const handleSubmit = async () => {
+        try {
+            const response = await axios.post('http://localhost:8000/predict/', { text });
+            setResult(response.data.prediction);
+        } catch (error) {
+            console.error("There was an error!", error);
+        }
+    };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <div className="AppGlass"></div> */}
+      <Title title={"Spam Message Detector"}/>
+      <InputBox value={text} onChange={(e) => setText(e.target.value)}/>
+      <CheckButton onClick={handleSubmit}/>
+      {result && <p>{result}</p>}
+
     </div>
   );
 }
