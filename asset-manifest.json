@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Spam-sms-email-classifier/static/css/main.5364027f.css",
+    "main.js": "/Spam-sms-email-classifier/static/js/main.d9578f7a.js",
+    "index.html": "/Spam-sms-email-classifier/index.html",
+    "main.5364027f.css.map": "/Spam-sms-email-classifier/static/css/main.5364027f.css.map",
+    "main.d9578f7a.js.map": "/Spam-sms-email-classifier/static/js/main.d9578f7a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5364027f.css",
+    "static/js/main.d9578f7a.js"
+  ]
+}
